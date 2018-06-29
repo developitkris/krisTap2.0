@@ -1,18 +1,18 @@
 import React from 'react'
 
-const masterList = [
+const masterBrewList = [
 
 ]
 
-function List(){
+function BrewList(){
   return (
     <div>
     <hr/>
-    {masterList}.map(() =>
+    {masterBrewList}.map(() =>
       <
       />
     )}
     </div>
   )}
 
-  export default List
+  export default BrewList
