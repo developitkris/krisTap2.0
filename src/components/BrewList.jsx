@@ -65,7 +65,8 @@ function BrewList(){
       price={beer.price}
       keg={beer.keg}
       key={index}/>
-    )}
+    )
     </div>
+  )}
 
   export default BrewList

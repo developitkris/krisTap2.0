@@ -37,7 +37,7 @@ React v Angular: What are the differences in binding methods?
 * Clone this Github repository
 * Run "npm install"
 * Run "npm run start"
-* Load the page on localhost://8000
+* Load the page on http://localhost:8080/
 
 ## Bugs
 

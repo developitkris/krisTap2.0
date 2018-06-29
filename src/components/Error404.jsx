@@ -8,7 +8,7 @@ function Error404(props){
       <h2>The page {props.location.pathname} does not exist!</h2>
       <h3>Would you like to return <Link to="/">Home</Link> instead?</h3>
     </div>
-    console.log(props);
+    // console.log(props)
   )
 }
 

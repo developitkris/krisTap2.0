@@ -1,5 +1,5 @@
 {
-  "name": "krisTap2.0",
+  "name": "kristap2.0",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -30,5 +30,13 @@
     "webpack": "^3.4.0",
     "webpack-dev-server": "^2.5.0"
   },
-  "description": ""
+  "description": "This website is built using React and JSX.  It will be a recreation of a previous Taproom project built with Angular.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/developitkris/krisTap2.0.git"
+  },
+  "bugs": {
+    "url": "https://github.com/developitkris/krisTap2.0/issues"
+  },
+  "homepage": "https://github.com/developitkris/krisTap2.0#readme"
 }
