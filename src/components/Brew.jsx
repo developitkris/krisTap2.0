@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 function Brew(props){
   return (
     <div>
-      <h3>{props.name}</h3>
+      <h3>{props.beerName}</h3>
       <ul>
         <li>{props.brewer}</li>
         <li>{props.description}</li>
@@ -17,7 +17,7 @@ function Brew(props){
   )}
 
 Brew.proptypes = {
-  name: PropTypes.string,
+  beerName: PropTypes.string,
   brewer: PropTypes.string,
   description: PropTypes.arrayOf(PropTypes.string),
   abv: PropTypes.number,
