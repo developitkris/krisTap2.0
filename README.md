@@ -39,9 +39,11 @@ React v Angular: What are the differences in binding methods?
 ## Setup & Installation
 
 * Clone this Github repository
-* Run "npm install"
+* Open up the cloned repository on your local device and navigate into your root folder
+* Run "npm install" or "npm i"
 * Run "npm run start"
 * Load the page on http://localhost:8080/
+* Enjoy the site and leave some feedback!
 
 ## Bugs
 

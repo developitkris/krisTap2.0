@@ -3,6 +3,7 @@ import Header from './Header'
 import { Switch, Route } from 'react-router-dom'
 import Error404 from './Error404'
 import BrewList from './BrewList'
+import BrewForm from './BrewForm'
 import About from './About'
 
 function App(){
@@ -20,6 +21,7 @@ function App(){
       <Header/>
       <Switch>
         <Route exact path='/' component={BrewList} />
+        <Route exact path='/brewform' component={BrewForm} />
         <Route exact path='/about' component={About} />
         <Route component={Error404} />
       </Switch>
