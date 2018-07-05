@@ -11,7 +11,7 @@ function App(){
       <style global jsx>{`
         body {
           background-size: 85%;
-          background-color: navy;
+          background-color: lightblue;
           background-position: center;
           background-repeat: no-repeat;
         }
@@ -19,7 +19,7 @@ function App(){
       </style>
       <Header/>
       <Switch>
-        <Route exact path='/' component={App} />
+        <Route exact path='/' component={BrewList} />
         <Route exact path='/about' component={About} />
         <Route component={Error404} />
       </Switch>

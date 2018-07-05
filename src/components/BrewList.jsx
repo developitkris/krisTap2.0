@@ -57,15 +57,15 @@ function BrewList(){
   return (
     <div>
       <hr/>
-      {masterBrewList}.map((beerName, brewer, description, abv, price, keg) =>
-      <Beer beerName={beer.beerName}
-      brewer={beer.brewer}
-      description={beer.description}
-      abv={beer.abv}
-      price={beer.price}
-      keg={beer.keg}
+      {masterBrewList.map((brew, index) =>
+      <Brew beerName={brew.beer}
+      brewer={brew.brewer}
+      description={brew.description}
+      abv={brew.abv}
+      price={brew.price}
+      keg={brew.keg}
       key={index}/>
-    )
+  )}
     </div>
   )}
 
