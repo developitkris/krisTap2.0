@@ -19,6 +19,10 @@ This is a website for a beer taproom which displays and monitors taps. It will h
 * User should be able to see and click on routes to navigate to different "pages" of the website
 * User should be able to see a list of brews and its associated information including: brew name, brewery, abv, price, description, keg fill
 
+## Component Structure
+
+![alt text](src/assets/images/component-structure.jpg "an initial sketch for planning this project")
+
 ## Notes
 
 ## Thoughts & Questions
