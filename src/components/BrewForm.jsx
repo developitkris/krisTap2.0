@@ -20,6 +20,7 @@ function BrewForm(){
       border: solid .5px blue;
     }
   `}</style>
+      <h3>You are about to make an awesome brew suggestion. Good thinking</h3>
       <form className='form'>
         <input
           type='text'
@@ -30,7 +31,7 @@ function BrewForm(){
         <textbox
           type='text'
           placeholder='Tell us why you want to suggest this beer to us.' required/>
-        <button type='submit'>Suggest!</button>
+        <button className='btn btn-lg btn-success' type='submit'>Suggest!</button>
       </form>
     </div>
 

@@ -9,13 +9,11 @@ class NewBrewControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
     };
-    this.handleClick = this.handleClick.bind(this)
+    this.handlePreFormScreening = this.handlePreFormScreening.bind(this)
   }
 
-  handleClick(){
+  handlePreFormScreening(){
     this.setState({formVisibleOnPage: true});
-    console.log('You are about to make an awesome brew suggestion. Good thinking.');
-    console.log('formVisibleOnPage is currently set to:' + this.state.formVisibleOnPage);
   }
 
   render(){
@@ -23,7 +21,7 @@ class NewBrewControl extends React.Component {
     if (this.state.formVisibleOnPage){
       currentlyVisibleContent= <BrewForm />;
     } else {
-      currentlyVisibleContent= <Questions />;
+      currentlyVisibleContent= <Questions onPreFormScreening={this.handlePreFormScreening}/>;
     }
     return(
       <div>
