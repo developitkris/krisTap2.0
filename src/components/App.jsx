@@ -1,10 +1,10 @@
 import React from 'react'
 import Header from './Header'
+import BrewList from './BrewList'
+import NewBrewControl from './NewBrewControl'
+import About from './About'
 import { Switch, Route } from 'react-router-dom'
 import Error404 from './Error404'
-import BrewList from './BrewList'
-import BrewForm from './BrewForm'
-import About from './About'
 
 function App(){
   return (
@@ -21,7 +21,7 @@ function App(){
       <Header/>
       <Switch>
         <Route exact path='/' component={BrewList} />
-        <Route exact path='/brewform' component={BrewForm} />
+        <Route exact path='/brewsuggestion' component={NewBrewControl} />
         <Route exact path='/about' component={About} />
         <Route component={Error404} />
       </Switch>
@@ -29,4 +29,4 @@ function App(){
   )
 }
 
-export default App
+export default App;
