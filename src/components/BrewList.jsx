@@ -58,7 +58,7 @@ function BrewList(){
     <div>
       <hr/>
       {masterBrewList.map((brew, index) =>
-      <Brew beerName={brew.beer}
+      <Brew beer={brew.beer}
       brewer={brew.brewer}
       description={brew.description}
       abv={brew.abv}

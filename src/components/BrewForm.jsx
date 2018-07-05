@@ -2,6 +2,20 @@ import React from 'react'
 import Header from './Header'
 
 function BrewForm(){
+  let _beer = null;
+  let _brewery = null;
+  let _description = null;
+
+  function handleBrewFormSubmission(event) {
+    event.preventDefault();
+    console.log(_beer.value);
+    console.log(_brewery.value);
+    console.log(_description.value);
+    _beer.value='';
+    _brewery.value='';
+    _description.value='';
+  }
+
   return (
     <div>
     <style jsx>{`
@@ -21,16 +35,25 @@ function BrewForm(){
     }
   `}</style>
       <h3>You are about to make an awesome brew suggestion. Good thinking</h3>
-      <form className='form'>
+      <form onSubmit={handleBrewFormSubmission} className='form'>
         <input
           type='text'
-          placeholder='Beer name: ' required/>
+          id='beer'
+          placeholder='Beer name: '
+          ref={(input) => {_beer = input;}}
+          required/>
         <input
           type='text'
-          placeholder='Brewery name: ' required/>
+          id='brewery'
+          placeholder='Brewery name: '
+          ref={(input) => {_brewery = input;}}
+          required/>
         <textbox
           type='text'
-          placeholder='Tell us why you want to suggest this beer to us.' required/>
+          id='description'
+          placeholder='Tell us why you want to suggest this beer to us.'
+          ref={(input) => {_description = input;}}
+          required/>
         <button className='btn btn-lg btn-success' type='submit'>Suggest!</button>
       </form>
     </div>
