@@ -1,14 +1,15 @@
 import React from 'react';
-import BrewForm from './BrewForm'
+import BrewForm from './BrewForm';
+import Questions from './Questions';
 
 class NewBrewControl extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false
-      this.handleClick = this.handleClick.bind(this);
+      formVisibleOnPage: false,
     };
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick(){
@@ -18,12 +19,17 @@ class NewBrewControl extends React.Component {
   }
 
   render(){
+    let currentlyVisibleContent = null;
+    if (this.state.formVisibleOnPage){
+      currentlyVisibleContent= <BrewForm />;
+    } else {
+      currentlyVisibleContent= <Questions />;
+    }
     return(
       <div>
-        <p>This is the NewBrewControl component</p>
-        <strong onClick={this.handleClick}>Click here to make a suggestion for a new brew!</strong>
+        {currentlyVisibleContent}
       </div>
-    )
+    );
   }
 }
 
