@@ -1,5 +1,5 @@
-import React from 'react'
-import Brew from './Brew'
+import React from 'react';
+import Brew from './Brew';
 
 const masterBrewList = [
 
@@ -58,7 +58,7 @@ function BrewList(){
     <div>
       <hr/>
       {masterBrewList}.map((beerName, brewer, description, abv, price, keg) =>
-      <Beer beer={beer.beerName}
+      <Beer beerName={beer.beerName}
       brewer={beer.brewer}
       description={beer.description}
       abv={beer.abv}
