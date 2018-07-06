@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+import Moment from 'moment';
 
 function BrewForm(props){
   let _beer = null;
@@ -10,7 +11,7 @@ function BrewForm(props){
 
   function handleBrewFormSubmission(event) {
     event.preventDefault();
-    props.onNewBrewCreation({beer: _beer.value, brewery: _brewery.value, description: _description.value, id: v4()});
+    props.onNewBrewCreation({beer: _beer.value, brewery: _brewery.value, description: _description.value, id: v4(), timeOpen: new Moment()});
     _beer.value='';
     _brewery.value='';
     _description.value='';

@@ -11,11 +11,12 @@ function UpcomingBrews(props){
   return(
     <div>
       <hr/>
-      {props.upcomingBrews.map((brew, index) =>
+      {props.upcomingBrews.map((brew) =>
         <Brew
           beer={brew.beer}
           brewery={brew.brewery}
           description={brew.description}
+          timeOpen={brew.timeOpen}
           key={brew.id} />
         )}
     </div>
