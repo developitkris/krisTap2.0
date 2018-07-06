@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 function BrewForm(props){
   let _beer = null;
@@ -9,7 +10,7 @@ function BrewForm(props){
 
   function handleBrewFormSubmission(event) {
     event.preventDefault();
-    props.onNewBrewCreation({beer: _beer.value, brewery: _brewery.value, description: _description.value});
+    props.onNewBrewCreation({beer: _beer.value, brewery: _brewery.value, description: _description.value, id: v4()});
     _beer.value='';
     _brewery.value='';
     _description.value='';
@@ -62,7 +63,7 @@ function BrewForm(props){
           ref={(input) => {_description = input;}}
           required/>
         <hr></hr>
-        <button className='btn btn-lg btn-success' type='submit'>Suggest!</button>
+        <button className='btn btn-lg btn-block btn-info btn-outline-secondary' type='submit'>Suggest!</button>
       </form>
     </div>
 
