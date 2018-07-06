@@ -33,26 +33,35 @@ function BrewForm(props){
       border: solid .5px blue;
     }
   `}</style>
+      <br></br>
+      <br></br>
       <h3>You are about to make an awesome brew suggestion. Good thinking</h3>
       <form onSubmit={handleBrewFormSubmission} className='form'>
+        <br></br>
+        <br></br>
         <input
           type='text'
           id='beer'
           placeholder='Beer name: '
           ref={(input) => {_beer = input;}}
           required/>
+        <hr></hr>
         <input
           type='text'
           id='brewery'
           placeholder='Brewery name: '
           ref={(input) => {_brewery = input;}}
           required/>
-        <textbox
+        <hr></hr>
+        <textarea
+          rows="4"
+          cols="50"
           type='text'
           id='description'
           placeholder='Tell us why you want to suggest this beer to us.'
           ref={(input) => {_description = input;}}
           required/>
+        <hr></hr>
         <button className='btn btn-lg btn-success' type='submit'>Suggest!</button>
       </form>
     </div>

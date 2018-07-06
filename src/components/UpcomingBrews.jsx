@@ -2,11 +2,15 @@ import React from 'react';
 import Brew from './Brew';
 import PropTypes from 'prop-types';
 
+const brewSuggestionList = [
+
+]
+
 function UpcomingBrews(props){
   return(
     <div>
       <hr/>
-      {props.brewList.map((brew, index) =>
+      {props.brewSuggestionList.map((brew, index) =>
         <Brew
           beer={brew.beer}
           brewery={brew.brewery}

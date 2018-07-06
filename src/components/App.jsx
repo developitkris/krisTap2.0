@@ -11,15 +11,15 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      masterBrewList: []
+      brewSuggestionList : []
     };
     this.handleAddingBrewSuggestionToUpcoming = this.handleAddingBrewSuggestionToUpcoming.bind(this);
   }
 
   handleAddingBrewSuggestionToUpcoming(newBrew){
-    let newMasterBrewList = this.state.masterBrewList.slice();
-    newMasterBrewList.push(newBrew);
-    this.setState({masterBrewList: newMasterBrewList});
+    let newBrewSuggestionList = this.state.brewSuggestionList.slice();
+    newBrewSuggestionList.push(newBrew);
+    this.setState({brewSuggestionList: newBrewSuggestionList});
   }
 
   render(){
@@ -38,7 +38,7 @@ class App extends React.Component{
         <Switch>
           <Route exact path='/' component={BrewList} />
           <Route path='/brewform' render={() =><NewBrewControl onNewBrewCreation={this.handleAddingBrewSuggestionToUpcoming} />} />
-          <Route path='/upcomingbrews' render={() =><UpcomingBrews upcomingBrews={this.state.masterBrewList} />} />
+          <Route path='/upcomingbrews' render={() =><UpcomingBrews upcomingBrews={this.state.brewSuggestionList} />} />
           <Route exact path='/about' component={About} />
           <Route component={Error404} />
         </Switch>
