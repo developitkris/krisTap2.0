@@ -21,7 +21,7 @@ This is a website for a beer taproom which displays and monitors taps. It will h
 
 ## Component Structure
 
-![alt text](src/assets/images/component-structure.jpg "an initial sketch for planning this project")
+![alt text](src/assets/images/updatedComponentStructure.png "an initial sketch for planning this project")
 
 ## Notes
 
