@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Moment from 'moment';
 
 function SuggestedBrew(props){
   return (
@@ -10,20 +9,17 @@ function SuggestedBrew(props){
         <li>{props.brewer}</li>
         <li>{props.description}</li>
       </ul>
-      <h5>Suggested{displayTimeOpen(props.timeOpen)} ago</h5>
+      <h5>Suggested{props.formattedWaitTime} ago</h5>
       <hr/>
     </div>
-  )}
-
-function displayTimeOpen(timeOpen) {
-  return timeOpen.from(new Moment(), true);
+  );
 }
 
-SuggestedBrew.proptypes = {
+SuggestedBrew.propTypes = {
   beer: PropTypes.string,
   brewer: PropTypes.string,
   description: PropTypes.arrayOf(PropTypes.string),
-  timeOpen: PropTypes.instanceOf(Moment).isRequired
-}
+  formattedWaitTime: PropTypes.string.isRequired
+};
 
 export default SuggestedBrew;

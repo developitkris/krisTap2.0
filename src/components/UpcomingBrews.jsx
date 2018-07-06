@@ -7,16 +7,16 @@ import PropTypes from 'prop-types';
 // ]
 
 function UpcomingBrews(props){
-  console.log(props.upcomingBrews);
+  console.log(props.brewSuggestionList);
   return(
     <div>
       <hr/>
-      {props.upcomingBrews.map((suggestedBrew) =>
+      {props.brewSuggestionList.map((suggestedBrew) =>
         <SuggestedBrew
           beer={suggestedBrew.beer}
           brewery={suggestedBrew.brewery}
           description={suggestedBrew.description}
-          timeOpen={suggestedBrew.timeOpen}
+          formattedWaitTime={suggestedBrew.formattedWaitTime}
           key={suggestedBrew.id} />
         )}
     </div>
