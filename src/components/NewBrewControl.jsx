@@ -32,7 +32,7 @@ class NewBrewControl extends React.Component {
   }
 }
 
-NewBrewControl.proptypes = {
+NewBrewControl.propTypes = {
   onNewBrewCreation: PropTypes.func
 };
 

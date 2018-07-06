@@ -60,7 +60,7 @@ function BrewForm(props){
   )
 }
 
-BrewForm.proptypes = {
+BrewForm.propTypes = {
   onNewBrewCreation: PropTypes.func
 };
 
