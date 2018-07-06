@@ -19,7 +19,7 @@ function displayTimeOpen(timeOpen) {
   return timeOpen.from(new Moment(), true);
 }
 
-Brew.proptypes = {
+SuggestedBrew.proptypes = {
   beer: PropTypes.string,
   brewer: PropTypes.string,
   description: PropTypes.arrayOf(PropTypes.string),
