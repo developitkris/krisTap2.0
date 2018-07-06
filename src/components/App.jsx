@@ -66,7 +66,11 @@ class App extends React.Component{
   }
 
   render(){
+    let bkgrd= require('./../assets/images/homepage.jpg')
     return (
+      <div className='homeImg'>
+        <div className='background-image' style={{backgroundImage: "url("+bkgrd+")"}}></div>
+
       <div>
         <style global jsx>{`
           body {
@@ -86,6 +90,7 @@ class App extends React.Component{
           <Route component={Error404} />
         </Switch>
       </div>
+    </div>
     )
   }
 }
