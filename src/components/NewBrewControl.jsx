@@ -1,6 +1,7 @@
 import React from 'react';
 import BrewForm from './BrewForm';
 import Questions from './Questions';
+import PropTypes from "prop-types";
 
 class NewBrewControl extends React.Component {
 
@@ -19,7 +20,7 @@ class NewBrewControl extends React.Component {
   render(){
     let currentlyVisibleContent = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleContent= <BrewForm />;
+      currentlyVisibleContent= <BrewForm onNewBrewCreation={this.props.onNewBrewCreation}/>;
     } else {
       currentlyVisibleContent= <Questions onPreFormScreening={this.handlePreFormScreening}/>;
     }
@@ -30,5 +31,9 @@ class NewBrewControl extends React.Component {
     );
   }
 }
+
+NewBrewControl.proptypes = {
+  onNewBrewCreation: PropTypes.func
+};
 
 export default NewBrewControl;

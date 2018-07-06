@@ -1,16 +1,15 @@
-import React from 'react'
-import Header from './Header'
+import React from 'react';
+import Header from './Header';
+import PropTypes from 'prop-types';
 
-function BrewForm(){
+function BrewForm(props){
   let _beer = null;
   let _brewery = null;
   let _description = null;
 
   function handleBrewFormSubmission(event) {
     event.preventDefault();
-    console.log(_beer.value);
-    console.log(_brewery.value);
-    console.log(_description.value);
+    props.onNewBrewCreation({beer: _beer.value, brewery: _brewery.value, description: _description.value});
     _beer.value='';
     _brewery.value='';
     _description.value='';
@@ -60,5 +59,9 @@ function BrewForm(){
 
   )
 }
+
+BrewForm.proptypes = {
+  onNewBrewCreation: PropTypes.func
+};
 
 export default BrewForm;
