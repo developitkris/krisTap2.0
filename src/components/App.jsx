@@ -58,18 +58,17 @@ class App extends React.Component{
   }
 
   updateSuggestedBrewElapsedTime() {
-    console.log('check');
-    let newBrewSuggestionList = this.state.brewSuggestionList.slice();
-    newBrewSuggestionList.forEach((suggestedBrew) =>
-      suggestedBrew.formattedWaitTime = (suggestedBrew.timeOpen).fromNow(true)
-    );
-    this.setState({brewSuggestionList: newBrewSuggestionList})
-  }
+    let newBrewSuggestionList = Object.assign({}, this.state.brewSuggestionList);
+    Object.keys(newBrewSuggestionList).forEach(suggbrewId => {
+      newBrewSuggestionList[suggbrewId].formattedWaitTime = (newBrewSuggestionList[suggbrewId].timeOpen).fromNow(true);
+    });
+      this.setState({brewSuggestionList: newBrewSuggestionList});
+    }
 
   handleAddingBrewSuggestionToUpcoming(newBrew){
     let newBrewSuggestionList = Object.assign({},  this.state.brewSuggestionList, {[newBrew.id]: newBrew}
     });
-    newSuggestedBrew[newBrew.id].formattedWaitTime = newSuggestedBrew[newBrew.id].timeOpen.fromNow(true);
+    newBrewSuggestionList[newBrew.id].formattedWaitTime = newBrewSuggestionList[newBrew.id].timeOpen.fromNow(true);
     this.setState({brewSuggestionList: newBrewSuggestionList});
   }
 
