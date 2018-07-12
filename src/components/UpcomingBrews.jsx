@@ -10,14 +10,16 @@ function UpcomingBrews(props){
   return(
     <div>
       <hr/>
-      {props.brewSuggestionList.map((suggestedBrew) =>
-        <SuggestedBrew
-          beer={suggestedBrew.beer}
-          brewery={suggestedBrew.brewery}
-          description={suggestedBrew.description}
-          formattedWaitTime={suggestedBrew.formattedWaitTime}
-          key={suggestedBrew.id} />
-        )}
+      {Object.keys(props.suggestedList).map(function(suggbrewId) {
+        let suggbrew = props.suggestedList[suggbrewId];
+        return <suggbrew
+        beer={suggbrew.beer}
+        brewer={suggbrew.brewer}
+        description={suggbrew.description}
+        currentRouterPath={props.currentRouterPath}
+        key={suggbrew.id}
+        onBrewSelection={props.onBrewSelection}/>;
+    })}
     </div>
   );
 }
