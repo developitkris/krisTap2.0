@@ -72,6 +72,10 @@ class App extends React.Component{
     this.setState({brewSuggestionList: newBrewSuggestionList});
   }
 
+  handleChangingOutKeg(brewId){
+    this.setState({selectedKeg: brewId});
+  }
+
   render(){
     let bkgrd= require('./../assets/images/homepage.jpg')
     return (
@@ -90,9 +94,14 @@ class App extends React.Component{
         </style>
         <Header/>
         <Switch>
-          <Route exact path='/' component={BrewList} />
+          <Route exact path='/' render={(props)=><Admin brewList={this.state.masterBrewList} currentRouterPath={props.location.pathname}
+            onKegPour={this.handleChangingOutKeg}
+            selectedKeg={this.state.selectedKeg}/>} />
+          <Route path='/admin' render={(props)=><Admin brewList={this.state.masterBrewList} currentRouterPath={props.location.pathname}
+            onKegSelection={this.handleChangingOutKeg}
+            selectedKeg={this.state.selectedKeg}/>} />
           <Route path='/brewform' render={() =><NewBrewControl onNewBrewCreation={this.handleAddingBrewSuggestionToUpcoming} />} />
-          <Route path='/upcomingbrews' render={() =><UpcomingBrews upcomingBrews={this.state.brewSuggestionList} />} />
+          <Route exact path='/upcomingbrews' render={()=><UpcomingBrews upcomingBrews={this.state.brewSuggestionList} />} />
           <Route exact path='/about' component={About} />
           <Route component={Error404} />
         </Switch>

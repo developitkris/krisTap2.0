@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 function Brew(props){
   return (
-    <div>
+    <div onClick={() => {props.onKegSelection(props.brewId);}}>
       <h3>{props.beer}</h3>
       <ul>
         <li>{props.brewer}</li>
@@ -16,13 +16,14 @@ function Brew(props){
     </div>
   )}
 
-Brew.proptypes = {
+Brew.propTypes = {
   beer: PropTypes.string,
   brewer: PropTypes.string,
   description: PropTypes.arrayOf(PropTypes.string),
   abv: PropTypes.number,
   price: PropTypes.number,
   keg: PropTypes.number,
+  brewId: PropTypes.string.isRequired
 }
 
 export default Brew;

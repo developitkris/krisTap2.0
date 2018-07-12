@@ -1,5 +1,6 @@
 import React from 'react';
 import Brew from './Brew';
+import PropTypes from 'prop-types';
 // import { v4 } from 'uuid'
 
 const masterBrewList = [
@@ -54,19 +55,24 @@ const masterBrewList = [
       }
 ]
 
-function BrewList(){
+function BrewList(props){
   return (
     <div>
       <hr/>
-      {masterBrewList.map((brew, index) =>
-      <Brew beer={brew.beer}
-      brewer={brew.brewer}
-      description={brew.description}
-      abv={brew.abv}
-      price={brew.price}
-      keg={brew.keg}
-      key={index}/>
-  )}
+      {Object.keys(props.brewList).map(function(brewId) {
+        let brew = props.brewList[brewId];
+        return <Brew
+          beer={brew.beer}
+          brewer={brew.brewer}
+          description={brew.description}
+          abv={brew.abv}
+          price={brew.price}
+          keg={brew.keg}
+          brewId={brew.id}
+          currentRouterPath={props.currentRouterPath}
+          onKegSelection={props.onKegSelection}/>
+      })}
+      <button class='btn btn-success' onClick={()=>{props.onKegPour(props.brewId);}}></button>
     </div>
   )}
 

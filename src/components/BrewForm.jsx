@@ -6,14 +6,17 @@ import Moment from 'moment';
 
 function BrewForm(props){
   let _beer = null;
-  let _brewery = null;
+  let _brewer = null;
   let _description = null;
 
   function handleBrewFormSubmission(event) {
     event.preventDefault();
-    props.onNewBrewCreation({beer: _beer.value, brewery: _brewery.value, description: _description.value, id: v4(), timeOpen: new Moment()});
+    props.onNewBrewCreation({
+      beer: _beer.value,
+      brewer: _brewer.value, description: _description.value, id: v4(),
+      timeOpen: new Moment()});
     _beer.value='';
-    _brewery.value='';
+    _brewer.value='';
     _description.value='';
   }
 
@@ -50,9 +53,9 @@ function BrewForm(props){
         <hr></hr>
         <input
           type='text'
-          id='brewery'
-          placeholder='Brewery name: '
-          ref={(input) => {_brewery = input;}}
+          id='brewer'
+          placeholder='Brewer name: '
+          ref={(input) => {_brewer = input;}}
           required/>
         <hr></hr>
         <textarea
@@ -60,7 +63,7 @@ function BrewForm(props){
           cols="50"
           type='text'
           id='description'
-          placeholder='Tell us why you want to suggest this beer to us.'
+          placeholder='Tell us why you are suggesting this to us.'
           ref={(input) => {_description = input;}}
           required/>
         <hr></hr>
