@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Header'
 import BrewList from './BrewList'
 import NewBrewControl from './NewBrewControl'
+import UpcomingBrews from './UpcomingBrews'
 import About from './About'
 import { Switch, Route } from 'react-router-dom'
 import Error404 from './Error404'
@@ -12,7 +13,14 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      brewSuggestionList : []
+      brewSuggestionList : {
+        'UNIQUE-ID' : {
+          beer: '',
+          brewery: '',
+          formattedWaitTime: '',
+          timeOpen: Moment {}
+        }
+      }
     };
     this.handleAddingBrewSuggestionToUpcoming = this.handleAddingBrewSuggestionToUpcoming.bind(this);
   }
@@ -59,9 +67,9 @@ class App extends React.Component{
   }
 
   handleAddingBrewSuggestionToUpcoming(newBrew){
-    let newBrewSuggestionList = this.state.brewSuggestionList.slice();
-    newSuggestedBrew.formattedWaitTime = (newSuggestedBrew.timeOpen).fromNow(true)
-    newBrewSuggestionList.push(newBrew);
+    let newBrewSuggestionList = Object.assign({},  this.state.brewSuggestionList, {[newBrew.id]: newBrew}
+    });
+    newSuggestedBrew[newBrew.id].formattedWaitTime = newSuggestedBrew[newBrew.id].timeOpen.fromNow(true);
     this.setState({brewSuggestionList: newBrewSuggestionList});
   }
 

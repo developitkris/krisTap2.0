@@ -2,9 +2,8 @@ import React from 'react';
 import Brew from './Brew';
 import BrewForm from './BrewForm';
 import PropTypes from 'prop-types';
-
-// const brewSuggestionList = [
-// ]
+import SuggestedBrew from './SuggestedBrew';
+// import { v4 } from 'uuid'
 
 function UpcomingBrews(props){
   console.log(props.brewSuggestionList);
@@ -22,6 +21,20 @@ function UpcomingBrews(props){
     </div>
   );
 }
+
+function UpcomingBrews(){
+  return (
+    <div>
+      <hr/>
+      {brewSuggestionList.map((suggBrew, index) =>
+      <SuggestedBrew
+      beer={suggestedBrew.beer}
+      brewer={suggestedBrew.brewer}
+      description={suggestedBrew.description}
+      key={index}/>
+      )}
+    </div>
+  )}
 
 UpcomingBrews.propTypes = {
   upcomingBrews: PropTypes.array
